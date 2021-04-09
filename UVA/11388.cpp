@@ -70,51 +70,16 @@ ll lcm(ll a, ll b){ return (a/gcd(a, b)*b);}
 ll ncr(ll a, ll b){ ll x = max(a-b, b), ans=1; for(ll K=a, L=1; K>=x+1; K--, L++){ ans = ans * K; ans /= L;} return ans;}
 ll bigmod(ll a,ll b){ if(b==0){ return 1;} ll tm=bigmod(a,b/2); tm=(tm*tm)%mod; if(b%2==1) tm=(tm*a)%mod; return tm;}
 ll egcd(ll a,ll b,ll &x,ll &y){ if(a==0){ x=0; y=1; return b;} ll x1,y1; ll d=egcd(b%a,a,x1,y1); x=y1-(b/a)*x1; y=x1; return d;}
-int a[100005];
-vector<int> p;
-void seive()
-{
-	p.PB(2);
-	for(int i=3;i*i<=100000;i=i+2)
-	{
-		if(a[i]==0)
-		{
-            for(int j=i*i;j<=100000;j=j+2*i)
-            a[j]=1;
-		}
-	}
-	for(int i=3;i<=100000;i=i+2)
-	{
-		if(a[i]==0) p.PB(i);
-	}
-}
 int main()
 {
-   seive();
+   boost_;
    ll t;
    cin>>t;
    while(t--)
    {
-      ll g,l,gg,ll,check=0;
+      ll g,l;
       cin>>g>>l;
-      gg=g,ll=l;
-      for(int i=0;i<p.size();i++)
-      {
-      	 int temp=0,temp1=0;
-      	 while(gg%p[i]==0)
-      	 {
-      	 	temp++; gg/=p[i];
-      	 }
-      	 while(ll%p[i]==0)
-      	 {
-      	 	temp1++; ll/=p[i];
-      	 }
-      	 if(temp>temp1)
-      	 	{check=1;break;}
-      }
-      if(gg!=1&&gg!=ll)
-      check=1;
-      if(check) cout<<-1<<endl;
+      if(l%g) cout<<-1<<endl;
       else cout<<g<<" "<<l<<endl;
    }
 }
