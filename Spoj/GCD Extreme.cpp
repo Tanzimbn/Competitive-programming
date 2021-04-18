@@ -74,6 +74,7 @@ int main()
 {
    seive();
    ll n;
+   // gcd sum function 
    for(int i=1;i<=1000001;i++)
    {
        int temp=i,sum=1;
@@ -91,6 +92,7 @@ int main()
         sum=sum*(2*temp-1);
        ans[i]=ans[i-1]+sum-i;
    }
+    //
    while(cin>>n)
    {
        if(n==0) return 0;
