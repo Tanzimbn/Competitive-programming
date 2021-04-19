@@ -53,46 +53,36 @@ ll lcm(ll a, ll b){ return (a/gcd(a, b)*b);}
 ll ncr(ll a, ll b){ ll x = max(a-b, b), ans=1; for(ll K=a, L=1; K>=x+1; K--, L++){ ans = ans * K; ans /= L;} return ans;}
 ll bigmod(ll a,ll b){ if(b==0){ return 1;} ll tm=bigmod(a,b/2); tm=(tm*tm)%mod; if(b%2==1) tm=(tm*a)%mod; return tm;}
 ll egcd(ll a,ll b,ll &x,ll &y){ if(a==0){ x=0; y=1; return b;} ll x1,y1; ll d=egcd(b%a,a,x1,y1); x=y1-(b/a)*x1; y=x1; return d;}
-int a[10005];
-vector<int> v;
-void seive ()
+ll phi[1000005],ans[1000005],temp[1000005];
+void check(int N)
 {
-    v.PB(2);
-    for(int i=3;i*i<=1005;i++)
+    // phi function
+    for(int i=1;i<=N;i++) phi[i]=i;
+    for(int i=2;i<=N;i++)
     {
-        if(a[i]==0)
+        if(phi[i]==i)
         {
-            for(int j=i*i;j<=1005;j+=2*i)
-            a[j]=1;
+            for(int j=i;j<=N;j+=i)
+            {
+                phi[j]/=i,phi[j]*=(i-1);
+            }
         }
     }
-    for(int i=3;i<=1005;i+=2)
-        if(a[i]==0) v.PB(i);
+    // gcd sum 
+    for(int i=1;i<=N;i++)
+    {
+        for(int j=i;j<=N;j+=i)
+        {
+            temp[j]+=(i*phi[j/i]);
+        }
+    }
+    for(int i=1;i<=N;i++)
+    ans[i]=ans[i-1]+temp[i]-i;
 }
-ll ans[1000005];
 int main()
 {
-   seive();
+   check(1000001);
    ll n;
-   // gcd sum function 
-   for(int i=1;i<=1000001;i++)
-   {
-       int temp=i,sum=1;
-       for(int j=0;v[j]*v[j]<=temp&&j<v.size();j++)
-       {
-           int num=1,p=0;
-           while(temp%v[j]==0)
-           {
-               ++p,temp/=v[j],num=num*v[j];
-           }
-           if(p)
-           sum=sum*((p+1)*num-p*(num/v[j]));
-       }
-       if(temp>1)
-        sum=sum*(2*temp-1);
-       ans[i]=ans[i-1]+sum-i;
-   }
-    //
    while(cin>>n)
    {
        if(n==0) return 0;
