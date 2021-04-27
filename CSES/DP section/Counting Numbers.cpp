@@ -55,7 +55,7 @@ ll bigmod(ll a,ll b){ if(b==0){ return 1;} ll tm=bigmod(a,b/2); tm=(tm*tm)%mod; 
 ll egcd(ll a,ll b,ll &x,ll &y){ if(a==0){ x=0; y=1; return b;} ll x1,y1; ll d=egcd(b%a,a,x1,y1); x=y1-(b/a)*x1; y=x1; return d;}
 ll dp[20][11][2][2];
 ll check(string s,int pos,int pre,int lz,int small)
-{
+{// lz means leading zero . small means previous part is smaller than given number
     if(pos==s.size()) return 1;
     if(pre!=-1&&dp[pos][pre][lz][small]!=-1) return dp[pos][pre][lz][small];
     ll ans=0;
