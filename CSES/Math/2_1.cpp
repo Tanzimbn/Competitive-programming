@@ -80,6 +80,7 @@ int main()
     }
     //product of its divisors = a1^((p1*(p1+1))/2*(p2+1)*...(pn+1))*...
     // so, pro(i)=pro(i-1)^(pi+1)*ai^((pi*(pi+1))/2)*(p1+1)*...(p(i-1)+1)
+    // to count power we can use a^(m-1)=1 (mod m) https://cses.fi/problemset/task/1712
     ll power=1,pro=1;
     for(int i=0;i<n;i++)
     {
