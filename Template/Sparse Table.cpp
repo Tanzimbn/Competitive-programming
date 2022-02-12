@@ -1,4 +1,4 @@
-long long n,k,table[22][100005],a[100005]; // k=log(n) , table[maxlog][maxn]
+long long n,K,table[22][100005],a[100005]; // k=log(n) , table[maxlog][maxn]
 long long func(long long a,long long b)
 {
     return min(a,b);  // operation between two consecutive index 
@@ -6,7 +6,7 @@ long long func(long long a,long long b)
 void build()
 {
     for(int i=0;i<n;i++) table[0][i]=a[i];
-    for(int i=1;i<=k;i++)
+    for(int i=1;i<=K;i++)
     {
         for(int j=0;j+(1<<i)<=n;j++)
         {
@@ -17,7 +17,7 @@ void build()
 long long query(int l,int r)
 {
     long long ans=INT_MAX; // value depends on type of operation
-    for(int j=k;j>=0;j--)
+    for(int j=K;j>=0;j--)
     {
         if(l+(1<<j)-1<=r)
         {
