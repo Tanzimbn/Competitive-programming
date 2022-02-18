@@ -72,25 +72,3 @@ int shortest_cycle(int n)
     else
         return ans;
 }
- 
-// Driver code
-int main()
-{
-    // Number of vertices
-    int n = 7;
- 
-    // Add edges
-    Add_edge(0, 6);
-    Add_edge(0, 5);
-    Add_edge(5, 1);
-    Add_edge(1, 6);
-    Add_edge(2, 6);
-    Add_edge(2, 3);
-    Add_edge(3, 4);
-    Add_edge(4, 1);
- 
-    // Function call
-    cout << shortest_cycle(n);
- 
-    return 0;
-}
