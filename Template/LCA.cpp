@@ -1,9 +1,8 @@
 const int N= 1e5+5,LOG= 20;
-int depth[N],up[N][LOG],child[N];
+int depth[N],up[N][LOG];
 vector<int> v[N];
-int dfs(int pos,int pre)
+void dfs(int pos,int pre)
 {
-   int temp=1;
    for(auto it:v[pos])
    {
       if(it==pre) continue;
@@ -13,9 +12,8 @@ int dfs(int pos,int pre)
       {
         up[it][j] = up[up[it][j-1]][j-1];
       }
-      temp+=dfs(it,pos);
    }
-   return child[pos]=temp;
+   return ;
 }
 int kthancestor(int pos,int k)
 {
