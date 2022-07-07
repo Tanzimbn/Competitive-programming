@@ -12,6 +12,7 @@ void dfs(int pos,int pre)
       {
         up[it][j] = up[up[it][j-1]][j-1];
       }
+      dfs(it,pos);
    }
    return ;
 }
