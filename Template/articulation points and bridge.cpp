@@ -5,7 +5,7 @@ vector<bool> visited;
 vector<int> tin, low;
 int timer;
 
-void IS_CUTPOINT() {
+void IS_CUTPOINT(int a,int b=-1) { //check parameters , point or bridge
     // process the fact that vertex A is an articulation point
     // print A or store A in a vector
 }
@@ -20,8 +20,8 @@ void dfs(int v, int p = -1) {
         } else {
             dfs(to, v);
             low[v] = min(low[v], low[to]);
-            if (low[to] >= tin[v] && p!=-1)
-                IS_CUTPOINT(v);
+            if (low[to] >= tin[v] && p!=-1) // if bridge tin[U] < low[V] instead of tin[U] <= low[V]
+                IS_CUTPOINT(v); // if bridge then IS_CUTPOINT(v , to )
             ++children;
         }
     }
