@@ -2,6 +2,7 @@ ll seg[400005],a[100005],lazy[400005];
 // can lazy be zero by default ,check question
 // if we have multiple test case then check seg,a,lazy array 
 // 0 index or 1 index for query and update
+// while calling build , passed right range or not check it
 
 void build(int pos,int l,int r)
 {
