@@ -17,7 +17,7 @@ int get_centroid(int u,int p,int n){
     }
     return u;
 }
-void build_centroid(int u,int p){
+void build_centroid(int u,int p = -1){ // p = -1 for root 
     int n=get_sub(u,p);
     int centroid=get_centroid(u,p,n);
     if(p==-1) p=centroid;
