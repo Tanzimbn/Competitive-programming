@@ -14,15 +14,19 @@ bool check(vector<vector<pair<ll,ll> > > adj, ll n, ll s, ll t, ll c, ll d, ll m
     if(val != dp[pos.fi.se][pos.fi.fi]) continue;
     // cout << pos.se << pos.fi << endl;
     for(auto it : adj[pos.fi.se]) {
+        // pos.fi.se -> it.fi
         if(pos.se != it.fi && dp[it.fi][pos.fi.fi - 1] > val + it.se) {
             dp[it.fi][pos.fi.fi - 1] = val + it.se;
             pq.push({-dp[it.fi][pos.fi.fi - 1], {{pos.fi.fi - 1, it.fi}, pos.fi.se}});
         }
+        // pos.fi.se -> it.fi -back-jump- pos.fi.se
         if(dp[pos.fi.se][mid] > dp[pos.fi.se][pos.fi.fi] + mn[pos.fi.se] + d) {
             dp[pos.fi.se][mid] = dp[pos.fi.se][pos.fi.fi] + mn[pos.fi.se] + d;
             pq.push({-dp[pos.fi.se][mid], {{mid, pos.fi.se}, it.fi}});
         }
+        // pos.fi.se -> it.fi -back-jump- pos.fi.se -back-jump- it.fi
         ll val1 = dp[pos.fi.se][pos.fi.fi] + it.se + 2 * d;
+        // pos.fi.se -> it.fi -back-jump- pos.fi.se -> it.fi
         if(pos.fi.fi >= 2) 
         val1 = min(val1, dp[pos.fi.se][pos.fi.fi] + it.se + mn[it.fi] + d);
         if(dp[it.fi][mid] > val1) {
