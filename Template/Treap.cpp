@@ -1,3 +1,5 @@
+// Here, split based on index , may change according to problem
+// 
 using treap_val = char; // treap value data type
 struct node {
     node *L, *R;
@@ -62,6 +64,16 @@ void merge(node *&treap, node *left, node *right) {
 }
 void add(node *&treap, treap_val x) {
     merge(treap, treap, new node(x));
+}
+// insert at position upper_bound(x)
+void insert(node *&treap, int x) {
+    if(treap == 0) {
+        treap = new node(x); return;
+    }
+    node *a, *b;
+    split(treap, a, b, x);
+    add(a, x);
+    merge(treap, a, b);
 }
 // pos -> 1-indexed 
 void remove(node *&treap, int pos) {
