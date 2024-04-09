@@ -1,0 +1,501 @@
+% Team Note 
+% Three_Caballeros
+
+\documentclass[landscape, 8pt, a4paper, oneside]{extarticle}
+\usepackage{teamnote}
+\usepackage{multicol}
+
+% Uncomment below to use Korean
+% \usepackage{kotex}
+
+\teamnote{CUET}{Three\_Caballeros}{Hamim, Adib, Tanzim}
+
+\ShowUsage
+\ShowComplexity
+\HideAuthor
+
+% \WIP - work in progress
+% \revised - review needed
+% \added - should be revised
+% \tested - should be tested
+
+\begin{document}
+\begin{multicols}{3}
+\maketitlepage
+
+% Make Pagebreak if you want.
+% \pagebreak
+
+\section{Have you...}
+
+\subsection{tried...}
+
+\begin{itemize}
+    \item \textcolor{red}{\textbf{Reading the problem once more?}}
+    \item doubting ``obvious" things?
+    \item writing obivous things?
+    \item radical greedy approach?
+    \item thinking in reverse direction?
+    \item a greedy algorithm?
+    \item network flow when your greedy algorithms stuck?
+    \item a dynamic programming?
+    \item checking the range of answer?
+    \item random algorithm?
+    \item graph modeling using states?
+    \item inverting state only on odd indexes?
+    \item square root decomposition?
+    \item calculating error bound on a real number usage?
+\end{itemize}
+
+% \subsection{checked...}
+
+% \begin{itemize}
+%     \item \textcolor{red}{\textbf{you have read the statement correctly?}}
+%     \item typo copying the team note?
+%     \item initialization on multiple test case problem?
+%     \item additional information from the problem?
+%     \item undefined behavior?
+%     \item overflow?
+%     \item function without return value?
+%     \item real number error?
+%     \item implicit conversion?
+%     \item comparison between signed and unsigned integer?
+% \end{itemize}
+
+\section{Data Structure}
+
+\Algorithm{Fenwick tree}
+{}
+{}
+{cpp}{source/Data_structure/fenwick.cpp}
+
+\Algorithm{Segment tree with lazy prop.}
+{}
+{}
+{cpp}{source/Data_structure/lazy.cpp}
+
+\Algorithm{Persistent segment}
+{}
+{}
+{cpp}{source/Data_structure/persistent_seg.cpp}
+
+\Algorithm{Wavelet Tree}
+{}
+{}
+{cpp}{source/Data_structure/wavelet.cpp}
+
+\Algorithm{Segment tree with combine}
+{}
+{}
+{cpp}{source/Data_structure/seg_with_combine.cpp}
+
+\Algorithm{Sparse table}
+{}
+{}
+{cpp}{source/Data_structure/sparse.cpp}
+
+\Algorithm{Policy Based Data structure}
+{}
+{}
+{cpp}{source/Data_structure/pbds.cpp}
+
+\Algorithm{Sqrt Decomposition}
+{}
+{}
+{cpp}{source/Data_structure/sqrt.cpp}
+
+\Algorithm{MO’s algo}
+{}
+{}
+{cpp}{source/Data_structure/mo.cpp}
+
+\Algorithm{Treap}
+{}
+{}
+{cpp}{source/Data_structure/treap.cpp}
+
+\Algorithm{DSU rollback}
+{}
+{}
+{cpp}{source/Data_structure/dsu_rollback.cpp}
+
+\Algorithm{Trie: Array Implementation}
+{}
+{}
+{cpp}{source/Data_structure/trie.cpp}
+
+\Algorithm{Xor with Trie}
+{}
+{}
+{cpp}{source/Data_structure/xor_trie.cpp}
+
+\Algorithm{Vector}
+{}
+{}
+{cpp}{source/Data_structure/vector.cpp}
+
+\section{Game Theory}
+
+\Algorithm{Bogus Nim}
+{}
+{}
+{cpp}{source/game/bogus.cpp}
+
+\Algorithm{Grundy Number}
+{}
+{}
+{cpp}{source/game/grundy.cpp}
+
+\Algorithm{ Misere Nim}
+{}
+{}
+{cpp}{source/game/misere.cpp}
+
+\Algorithm{Nim Game}
+{}
+{}
+{cpp}{source/game/nim.cpp}
+
+\Algorithm{Staircase Nim}
+{}
+{}
+{cpp}{source/game/staircase.cpp}
+
+\section{Math}
+
+\subsection{Application of Catalan Numbers}
+1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012,
+742900, 2674440, 9694845,..\\
+\begin{itemize}
+    \item Number of correct bracket sequence consisting of n opening and n closing brackets.
+    \item The number of rooted full binary trees with n + 1
+leaves (vertices are not numbered). A rooted binary tree is full if every vertex has either two children or no children.
+    \item The number of ways to completely parenthesize n + 1 factors.
+    \item The number of triangulations of a convex polygon with n+ 2 sides (i.e. the number of partitions of polygon into disjoint triangles by using the diagonals).
+    \item The number of ways to connect the 2n points on a circle to form n disjoint chords.
+    \item The number of non-isomorphic full binary trees with n internal nodes (i.e. nodes having at least one son).
+    \item The number of monotonic lattice paths from point (0, 0) to point (n, n) in a square lattice of size n × n, which do not pass above the main diagonal (i.e. connecting (0, 0) to (n, n)).
+    \item Number of permutations of length n that can be stack sorted (i.e. it can be shown that the rearrangement is stack sorted if and only if there is no such index i < j < k, such that \(a_k < a_i < a_j \).
+    \item The number of non-crossing partitions of a set of n elements.
+    \item The number of ways to cover the ladder 1...n using n rectangles (The ladder consists of n columns, where ith column has a height i)
+\end{itemize}
+
+\subsection{Catalan Numbers}
+\(C_n = \binom{2n}{n} - \binom{2n}{n-1} = \frac{1}{n+1}\binom{2n}{n}, n \geq 0\)
+
+\Algorithm{Binary Exponentiation}
+{}
+{}
+{cpp}{source/Math/binary_expo.cpp}
+
+\Algorithm{Extended GCD}
+{}
+{}
+{cpp}{source/Math/extended.cpp}
+
+\Algorithm{Inverse Mod in O(m)}
+{}
+{}
+{cpp}{source/Math/inverse_mod.cpp}
+
+\Algorithm{Mobius Function}
+{} {}
+{cpp}{source/Math/mobius.cpp}
+
+\Algorithm{Chinese Remainder Struct}
+{} {}
+{cpp}{source/Math/chiness.cpp}
+
+\Algorithm{Pollard Rho O(n\textsuperscript{1/4})}
+{\texttt{is\_prime} For primarily test, \texttt{factor} for factorization $(n < 2^{62})$}
+{}
+{cpp}{source/Math/pollard_rho.cpp}
+
+\Algorithm{Gauss solving linear eqn}
+{Given a system of n linear algebraic equations (SLAE) with
+m unknowns variables. You are asked to solve the system: to determine if it has no solution, exactly one solution or infinite number of solutions. And in case it has at least one solution, find any of them.}
+{}
+{cpp}{source/Math/gauss.cpp}
+
+\Algorithm{FFT}
+{}
+{}
+{cpp}{source/Math/fft.cpp}
+
+\Algorithm{NTT}
+{Polynomial multiplication in mod}
+{}
+{cpp}{source/Math/ntt.cpp}
+
+\Algorithm{NTT any mod}
+{Polynomial multiplication in any mod}
+{}
+{cpp}{source/Math/NTT_any_mod.cpp}
+
+\Algorithm{FWHT}
+{AND, OR works for any modulo, XOR works for only prime. Size must be a power of two}
+{O(nlogn)}
+{cpp}{source/Math/fwht.cpp}
+
+\Algorithm{Euler phi}
+{}
+{}
+{cpp}{source/Math/Euler_phi.cpp}
+
+\Algorithm{Burnside Lemma}
+{ For Cube: \[\frac{1}{24}(n^6 + 3n^4 + 12n^3 + 8n^2)\] For Necklace: \[ \frac{1}{n} \sum_{i=0}^{n-1} \text{gcd}(i, n) \]}
+{}
+{}{}
+
+\section{String Algorithm}
+
+
+
+\Algorithm{Kmp}
+{}
+{}
+{cpp}{source/string/kmp.cpp}
+
+\Algorithm{Z-algorithm}
+{$i$-th element is common prefix of $S$ and $S_{i \dots \lvert S \rvert}$}
+{$\mathcal{O}(N)$}
+{cpp}{source/string/z_algo.cpp}
+{hyea}
+
+\Algorithm{Manacher}
+{Returns palindromic radius of $S$. To calculate even length palindromes, insert \texttt{\$} between each character.}
+{$\mathcal{O}(N)$}
+{cpp}{source/Data_structure/Manacher.cpp}
+{hyea}
+
+\Algorithm{Hashing}
+{}
+{}
+{cpp}{source/string/hashing.cpp}
+
+\Algorithm{Suffix array}
+{}
+{}
+{cpp}{source/string/suffix_array.cpp}
+
+\Algorithm{Aho-Corasick}
+{\texttt{MAXC}: size of alphabet, \texttt{F, FG}: failure (parent), failure graph, \texttt{ftrans}: state transition function.}
+{}
+{cpp}{source/string/aho.cpp}
+
+\Algorithm{Aho-Corasick Dynamic}
+{Add string dynamically}
+{}
+{cpp}{source/string/aho_dynamic.cpp}
+
+\Algorithm{Suffix Automaton}
+{search for all occurrences of one string in another, or count the amount of different substrings of a given string in linear time.}
+{}
+{cpp}{source/string/suffix_automaton.cpp}
+
+\section{Dynamic Programming}
+\Algorithm{CHT Offline}
+{Maintain some Linear Function $ f_{i}=m_{i}x+c_{i} $ And We can Query for a specific max/min of $ f_{i}=m_{i}x+c_{i} $ value}
+{}
+{cpp}{source/Geometry/CHT_Offline.cpp}
+{heya}
+
+\Algorithm{Knuth Optimization}
+{}
+{}
+{cpp}{source/dp/Knuth_Optimization.cpp}
+
+\Algorithm{D\&Q Dp}
+{}
+{}
+{cpp}{source/dp/DandQ_Dp.cpp}
+
+\Algorithm{SOS Dp}
+{}
+{$\mathcal{O}(N.2^N)$}
+{cpp}{source/dp/sos.cpp}
+
+\Algorithm{MCM}
+{}
+{}
+{cpp}{source/dp/MCM.cpp}
+
+\section {Graph}
+
+\Algorithm{Bridge and Articulation Point}
+{}
+{}
+{cpp}{source/graph/bridge_articulation.cpp}
+
+\Algorithm{LCA}
+{}
+{}
+{cpp}{source/graph/lca.cpp}
+
+
+\Algorithm{Max Flow Dinic}
+{}
+{}
+{cpp}{source/graph/dinic.cpp}
+
+\Algorithm{Maximum Bipartite Matching}
+{}
+{}
+{cpp}{source/graph/maximum_bipartite.cpp}
+
+\Algorithm{Hungarian-AlgorithmWeighted-BPMAssignment-Problem}
+{}
+{}
+{cpp}{source/graph/hungarian.cpp}
+
+\Algorithm{Matching (Hopcroft-Karp) in Bipartite Graph}
+{}
+{}
+{cpp}{source/graph/hopcroft.cpp}
+
+\Algorithm{Centroid Decomposition}
+{}
+{$\mathcal{O}(N \log N)$}
+{cpp}{source/graph/centroid.cpp}
+{hyea}
+
+\Algorithm{HLD}
+{}
+{}
+{cpp}{source/graph/hld.cpp}
+
+\Algorithm{Flow - Push relabel}
+{}
+{}
+{cpp}{source/graph/push_relabel.cpp}
+
+\Algorithm{Min cost Max Flow}
+{}
+{}
+{cpp}{source/graph/mcmf.cpp}
+
+\Algorithm{2-SAT}
+{}
+{O(n+m) where n is he number of variables and m is the number of clauses.}
+{cpp}{source/graph/2_sat.cpp}
+
+\subsection{SCC}
+\added
+
+\subsection{BCC, Cut vertex, Cut edge}
+
+\added
+
+
+\section{Geometry}
+
+\Algorithm
+{Smallest Enclosing Circle}
+{Use \texttt{solve} with \texttt{vector<Point>}. It returns \texttt{Circle c}, \texttt{c.p} is center, \texttt{c.r} is radius.}
+{$\mathcal{O}(n)$}
+{cpp}{source/hyea/SmallestEnclosingCircle.cpp}
+{hyea}
+
+\Algorithm{Points struct}
+{}
+{}
+{cpp}{source/Geometry/point.cpp}
+
+\Algorithm{Line}
+{}
+{}
+{cpp}{source/Geometry/line.cpp}
+
+\Algorithm{Operations}
+{}
+{}
+{cpp}{source/Geometry/operation.cpp}
+
+\Algorithm{Convex Hull}
+{}
+{}
+{cpp}{source/Geometry/convex_hull.cpp}
+
+\Algorithm{Point inside convex polygon}
+{}
+{}
+{cpp}{source/Geometry/point_inside_convex.cpp}
+
+\Algorithm{Pick’s Theorem}
+{}
+{}
+{cpp}{source/Geometry/picks.cpp}
+
+\section{Misc}
+
+\Algorithm{Submask Enumeration}
+{}
+{$\mathcal{O}(3^n)$}
+{cpp}{source/Misc/submask.cpp}
+{hyea}
+
+\Algorithm{Ternary search}
+{}
+{}
+{cpp}{source/Misc/ternary.cpp}
+{heya}
+
+\Algorithm{Next Lowest Element}
+{}
+{}
+{cpp}{source/Misc/Next_Lowest_Element.cpp}
+
+\Algorithm{Sliding Window range min}
+{}
+{}
+{cpp}{source/Misc/Sliding_Window_range_min.cpp}
+
+\Algorithm{Xor Basis}
+{}
+{}
+{cpp}{source/Misc/xor_basis.cpp}
+
+\Algorithm{Matrix Exponentiation}
+{}
+{}
+{cpp}{source/Misc/matrix.cpp}
+
+\Algorithm{LIS(nlogn)}
+{}
+{}
+{cpp}{source/Misc/lis.cpp}
+
+\section{Template}
+% \WIP
+\Algorithm{Hamim}
+{}
+{}
+{cpp}{source/hamim.cpp}
+{heya}
+
+\Algorithm{Random Generator}
+{}
+{}
+{cpp}{source/random_generator.cpp}
+
+\Algorithm{Pragma Optimization}
+{}
+{}
+{cpp}{source/pragma.cpp}
+
+\Algorithm{Primes up to 1000(168 primes)}
+{}
+{}
+{cpp}{source/primes.cpp}
+
+\subsection{Some Formulas}
+\begin{itemize}
+    \item \(1\binom{n}{1}+2\binom{n}{2}+...+n\binom{n}{n}=n2^{n-1}\)
+    \item Vandermonde’s Identify : \(\sum_{k=0}^{r}\binom{m}{k}\binom{n}{r-k}=\binom{m+n}{r}\)
+    \item Hockey-Stick Identify: \(n, r\in N, n > r, \sum_{i=r}^{n}\binom{i}{r}=\binom{n + 1}{r + 1}\)
+    \item The number of ways to put n identical objects into k labeled boxes is \(\binom{n+k-1}{n}\)
+    \item The number of lattice points on segment \((x_1,y_1) to (x_2,y_2)\) is \(\gcd(abs(x_1-x_2),abs(y_1-y_2))+1\)
+\end{itemize}
+
+\end{multicols}
+\end{document}
