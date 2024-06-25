@@ -16,10 +16,14 @@ void Preprocess(){
     }
 }
 struct Hashing{
-    ll hsh[2][MAX];
+    vector<ll> hsh[2];
     string str;
     Hashing(){}
-    Hashing(string _str) {str = _str; memset(hsh, 0, sizeof(hsh)); build();}
+    Hashing(string _str) {
+        str = _str; 
+        hsh[0] = vector<ll>(_str.size() + 1, 0);
+        hsh[1] = vector<ll>(_str.size() + 1, 0);
+        build();}
     void build(){
         for(ll i = str.size() - 1; i >= 0; i--){
             for(int j = 0; j < 2; j++){
